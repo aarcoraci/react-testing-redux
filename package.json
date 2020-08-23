@@ -10,10 +10,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "cross-fetch": "^3.0.5",
     "react": "16.13.1",
     "react-native": "0.63.2",
     "react-redux": "^7.2.1",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
