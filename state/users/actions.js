@@ -1,4 +1,5 @@
 import * as actionTypes from './actionTypes';
+import apiFetch from '../../utils/api';
 
 export function requestUsers(amount) {
   return {
@@ -26,9 +27,15 @@ export function fetchUsers(amount) {
     dispatch(requestUsers(amount));
 
     // fetch and dispatch action when received from server
+
     const url = 'https://jsonplaceholder.typicode.com/users';
-    return fetch(url)
+    apiFetch('GET', url, null)
       .then((response) => response.json())
       .then((json) => dispatch(receiveUsers(json)));
+
+    // const url = 'https://jsonplaceholder.typicode.com/users';
+    // return fetch(url)
+    //   .then((response) => response.json())
+    //   .then((json) => dispatch(receiveUsers(json)));
   };
 }
