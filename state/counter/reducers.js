@@ -1,10 +1,10 @@
-import * as actions from '../constants';
+import * as actionsTypes from './actionTypes';
 
 export default function reducer(state = 0, action) {
   switch (action.type) {
-    case actions.INCREASED_COUNTER:
+    case actionsTypes.INCREASED_COUNTER:
       return state + 1;
-    case actions.DECREASED_COUNTER:
+    case actionsTypes.DECREASED_COUNTER:
       return state - 1;
     default:
       return state;
