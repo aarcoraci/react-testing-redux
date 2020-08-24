@@ -1,3 +1,7 @@
+/*
+nice tutorial about redux and persistent storage
+https://itnext.io/react-native-why-you-should-be-using-redux-persist-8ad1d68fa48b
+*/
 import thunkMiddleware from 'redux-thunk';
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 
