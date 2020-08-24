@@ -49,7 +49,7 @@ const App = function () {
       <Button onPress={reduce} title="Remove Some" />
       <Text>There are {users.users.length} users</Text>
       <Button onPress={getMeUsers} title="Get Users" />
-      <Text style="{marginTop:30}">User logged is {auth.userName}</Text>
+      <Text style={{marginTop: 20}}>User logged is {auth.userName}</Text>
       <Button onPress={login} title="login" />
       <Button onPress={logout} title="logout" />
     </SafeAreaView>
