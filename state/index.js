@@ -9,13 +9,19 @@ import {persistStore, persistReducer} from 'redux-persist';
 //#region root reducer creation
 import countReducer from './counter/reducers';
 import userReducers from './users/reducers';
-const rootReducer = combineReducers({countReducer, users: userReducers});
+import authReducers from './auth/reducers';
+const rootReducer = combineReducers({
+  countReducer,
+  users: userReducers,
+  auth: authReducers,
+});
 //#endregion
 
 //#region persistence configuration
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
+  whitelist: ['auth'],
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 //#endregion
