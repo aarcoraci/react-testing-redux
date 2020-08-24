@@ -5,10 +5,9 @@
  */
 
 import fetch from 'cross-fetch';
-// import store from '../state';
+// import {store} from '../state';
 
 const apiFetch = async function (verb, url, data) {
-  //console.log(store.getState().users);
   const request = {
     method: verb,
   };
