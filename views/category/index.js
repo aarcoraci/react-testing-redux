@@ -1,21 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {SafeAreaView, StyleSheet, Text, Button} from 'react-native';
 import {useDispatch} from 'react-redux';
 import * as userActions from '../../state/auth/actions';
 
-const CategoryView = ({route}) => {
+const CategoryView = ({route, navigation}) => {
   const {categoryId} = route.params;
-  console.log(categoryId);
+
+  useEffect(() => {
+    navigation.setOptions({title: `category: ${categoryId}`});
+  });
 
   const dispatch = useDispatch();
-
   const attemptLogout = () => {
     dispatch(userActions.logout());
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>This is the home page</Text>
+      <Text>This a category page ({categoryId})</Text>
       <Button title="logout" onPress={attemptLogout} />
     </SafeAreaView>
   );

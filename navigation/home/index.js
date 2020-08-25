@@ -1,5 +1,4 @@
 import React from 'react';
-
 import CategoriesView from 'views/categories';
 import CategoryView from 'views/category';
 
@@ -8,15 +7,15 @@ import {createStackNavigator} from '@react-navigation/stack';
 const Stack = createStackNavigator();
 //#endregion
 
-import {optionsWithDrawerToggle} from 'navigation/options';
+import {defaultScreenOptions} from '../options';
 
 const HomeView = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator headerMode="screen" screenOptions={defaultScreenOptions}>
       <Stack.Screen
         name="Categories"
+        options={{headerTitle: 'Home'}}
         component={CategoriesView}
-        options={optionsWithDrawerToggle}
       />
       <Stack.Screen name="Category" component={CategoryView} />
     </Stack.Navigator>

@@ -1,12 +1,12 @@
-import React from 'react';
-import {Button} from 'react-native';
+/**
+ * https://reactnavigation.org/docs/stack-navigator/#transitionpresets
+ */
+import CustomHeader from './components/CustomHeader';
+import {TransitionPresets} from '@react-navigation/stack';
 
-const optionsWithDrawerToggle = ({navigation}) => {
-  return {
-    headerLeft: () => (
-      <Button title="press" onPress={() => navigation.toggleDrawer()} />
-    ),
-  };
+const defaultScreenOptions = {
+  header: CustomHeader,
+  ...TransitionPresets.SlideFromRightIOS,
 };
 
-export {optionsWithDrawerToggle};
+export {defaultScreenOptions};

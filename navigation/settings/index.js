@@ -1,21 +1,21 @@
 import React from 'react';
 
-import SettingsView from 'views/categories';
+import SettingsView from 'views/settings';
 
 //#region navigation
 import {createStackNavigator} from '@react-navigation/stack';
 const Stack = createStackNavigator();
 //#endregion
 
-import {optionsWithDrawerToggle} from 'navigation/options';
+import {defaultScreenOptions} from '../options';
 
 const HomeView = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={defaultScreenOptions}>
       <Stack.Screen
         name="Settings"
         component={SettingsView}
-        options={optionsWithDrawerToggle}
+        options={{headerTitle: 'Setting'}}
       />
     </Stack.Navigator>
   );
