@@ -11,19 +11,20 @@ import LoginView from '../login';
 
 //#region navigation
 import {createDrawerNavigator} from '@react-navigation/drawer';
-
 const Drawer = createDrawerNavigator();
 //#endregion
 
 const RootView = () => {
   const auth = useSelector((state) => state.auth);
-  return auth.loggedIn ? (
+  return auth.loggedIn ? <LoggedView /> : <LoginView />;
+};
+
+const LoggedView = () => {
+  return (
     <Drawer.Navigator initialRouteName="Home">
       <Drawer.Screen name="Home" component={HomeView} />
       <Drawer.Screen name="Settings" component={SettingsView} />
     </Drawer.Navigator>
-  ) : (
-    <LoginView />
   );
 };
 

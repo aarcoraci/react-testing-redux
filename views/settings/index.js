@@ -1,6 +1,11 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
 
+//#region navigation
+import {createStackNavigator} from '@react-navigation/stack';
+const Stack = createStackNavigator();
+//#endregion
+
 const SettingsView = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -18,4 +23,12 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SettingsView;
+const settingsWrapper = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Settings" component={SettingsView} />
+    </Stack.Navigator>
+  );
+};
+
+export default settingsWrapper;

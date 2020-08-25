@@ -1,29 +1,20 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, Button} from 'react-native';
-import {useDispatch} from 'react-redux';
-import * as userActions from '../../state/auth/actions';
+
+import CategoriesView from '../categories';
+import CategoryView from '../category';
+
+//#region navigation
+import {createStackNavigator} from '@react-navigation/stack';
+const Stack = createStackNavigator();
+//#endregion
 
 const HomeView = () => {
-  const dispatch = useDispatch();
-  const attemptLogout = () => {
-    dispatch(userActions.logout());
-  };
-
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>This is the home page</Text>
-      <Button title="logout" onPress={attemptLogout} />
-    </SafeAreaView>
+    <Stack.Navigator>
+      <Stack.Screen name="Categories" component={CategoriesView} />
+      <Stack.Screen name="Category" component={CategoryView} />
+    </Stack.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default HomeView;
