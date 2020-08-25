@@ -1,7 +1,6 @@
 import React from 'react';
 
-import CategoriesView from 'views/categories';
-import CategoryView from 'views/category';
+import SettingsView from 'views/categories';
 
 //#region navigation
 import {createStackNavigator} from '@react-navigation/stack';
@@ -14,11 +13,10 @@ const HomeView = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Categories"
-        component={CategoriesView}
+        name="Settings"
+        component={SettingsView}
         options={optionsWithDrawerToggle}
       />
-      <Stack.Screen name="Category" component={CategoryView} />
     </Stack.Navigator>
   );
 };

@@ -16,7 +16,7 @@ const CategoriesView = () => {
   };
 
   const goToCategory = () => {
-    navigation.navigate('Category');
+    navigation.navigate('Category', {categoryId: 100});
   };
 
   return (

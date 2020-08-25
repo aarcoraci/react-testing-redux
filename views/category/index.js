@@ -3,8 +3,12 @@ import {SafeAreaView, StyleSheet, Text, Button} from 'react-native';
 import {useDispatch} from 'react-redux';
 import * as userActions from '../../state/auth/actions';
 
-const HomeView = () => {
+const CategoryView = ({route}) => {
+  const {categoryId} = route.params;
+  console.log(categoryId);
+
   const dispatch = useDispatch();
+
   const attemptLogout = () => {
     dispatch(userActions.logout());
   };
@@ -26,4 +30,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeView;
+export default CategoryView;
