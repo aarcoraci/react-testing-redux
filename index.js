@@ -14,7 +14,7 @@ import {store, persistor} from './state';
 //#endregion
 
 //#region navigation
-import RootNavigator from './navigation';
+import RootNavigator from 'navigation';
 import {NavigationContainer} from '@react-navigation/native';
 //#endregion
 

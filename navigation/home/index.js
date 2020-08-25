@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CategoriesView from '../../views/categories';
-import CategoryView from '../../views/category';
+import CategoriesView from 'views/categories';
+import CategoryView from 'views/category';
 
 //#region navigation
 import {createStackNavigator} from '@react-navigation/stack';

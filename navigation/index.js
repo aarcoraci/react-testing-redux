@@ -4,7 +4,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 
-import LoginView from '../views/login';
+import LoginView from 'views/login';
 
 import AppNavigator from './AppNavigator';
 
